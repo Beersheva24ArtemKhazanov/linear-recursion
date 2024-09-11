@@ -25,16 +25,17 @@ public class RecursionMethods {
         if (degree < 0) {
             throw new IllegalArgumentException();
         }
-        long res;
-        if (degree == 0) {
-            res = 1;
-        } else if (degree % 2 == 0) {
-            int temp = (int) pow(num, degree / 2);
-            res = square(temp);
-        } else {
-            res = num * pow(num, degree - 1);
-        }
-        return res;
+        // long res;
+        // if (degree == 0) {
+        //     res = 1;
+        // } else if (degree % 2 == 0) {
+        //     int temp = (int) pow(num, degree / 2);
+        //     res = square(temp);
+        // } else {
+        //     res = num * pow(num, degree - 1);
+        // }
+        // return res;
+        return degree == 0 ? 1 : pow(num, pow(num, degree - 1));
     }
 
     public static int sum(int[] array) {
@@ -50,15 +51,18 @@ public class RecursionMethods {
     }
 
     public static boolean isSubstring(String str, String subStr) {
-        return subStr.length() == 0 || subStr.length() > str.length() ? false :firstMatching(str, subStr, 0, 0);
+        return subStr.length() == 0 || subStr.length() > str.length() ? false : firstMatching(str, subStr, 0, 0);
     }
 
     private static boolean firstMatching(String str, String subStr, int i, int j) {
-        return i == str.length() ? false : str.charAt(i) == subStr.charAt(j) ? fullMatching(str, subStr, i, j) : firstMatching(str, subStr, i + 1, j);
+        return i == str.length() ? false
+                : str.charAt(i) == subStr.charAt(j) ? fullMatching(str, subStr, i, j)
+                        : firstMatching(str, subStr, i + 1, j);
     }
 
     private static boolean fullMatching(String str, String subStr, int i, int j) {
-        return j == subStr.length() ? true : str.charAt(i) != subStr.charAt(j) ? false : fullMatching(str, subStr, i + 1, j + 1);
+        return j == subStr.length() ? true
+                : str.charAt(i) != subStr.charAt(j) ? false : fullMatching(str, subStr, i + 1, j + 1);
     }
 
 }

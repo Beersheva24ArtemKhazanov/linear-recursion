@@ -50,5 +50,7 @@ public class RecursionMethodsTest {
         assertTrue(isSubstring("gfdlgmiddlenovg", "middle"));
         assertTrue(isSubstring("BeGinPeterAlex", "BeGin"));
         assertFalse(isSubstring("BeGinPeterAlex", "BeGin100"));
+        assertFalse(isSubstring("BeGinPeterAlex", ""));
+        assertFalse(isSubstring("BeGinPeterAlex", "BeGinPeterAlex100"));
     }
 }

@@ -46,11 +46,11 @@ public class RecursionMethods {
     }
 
     public static int square(int x) {
-        return x == 0 ? 0 : square(x - 1) + x + x - 1;
+        return x == 0 ? 0 : x + square(x - 1) + x - 1;
     }
 
     public static boolean isSubstring(String str, String subStr) {
-        return firstMatching(str, subStr, 0, 0);
+        return subStr.length() == 0 || subStr.length() > str.length() ? false :firstMatching(str, subStr, 0, 0);
     }
 
     private static boolean firstMatching(String str, String subStr, int i, int j) {

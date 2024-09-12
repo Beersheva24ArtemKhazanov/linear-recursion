@@ -23,6 +23,7 @@ public class RecursionMethodsTest {
 
     @Test
     void powTest() {
+        assertEquals(64, pow(4, 3));
         assertEquals(100, pow(10, 2));
         assertEquals(100, pow(-10, 2));
         assertEquals(1000, pow(10, 3));
@@ -41,7 +42,7 @@ public class RecursionMethodsTest {
         assertEquals(100, square(10));
         assertEquals(16, square(4));
         assertEquals(25, square(5));
-        assertEquals(64, square(8));
+        assertEquals(-64, square(-8));
     }
     @Test
     void isSubStringTest() {
